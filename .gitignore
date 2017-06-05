@@ -5,5 +5,4 @@ addons.make
 config.make
 *.plist
 *.xcconfig
-*.xcodeproj
 bin/*.app
