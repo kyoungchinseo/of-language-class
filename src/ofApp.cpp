@@ -23,7 +23,6 @@ void ofApp::setup(){
     lowerLeft.setMessage("C");
     lowerRight.setMessage("D");
     
-    
     upperLeft.setColor(ofColor(255,0,0));
     upperRight.setColor(ofColor(255,255,0));
     lowerLeft.setColor(ofColor(0,255,255));
