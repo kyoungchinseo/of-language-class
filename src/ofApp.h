@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "FontText.h"
 
 class ofApp : public ofBaseApp{
 
@@ -22,18 +23,8 @@ public:
 		void gotMessage(ofMessage msg);
 
 public:
-    ofPoint upperLeft;
-    ofPoint upperRight;
-    ofPoint lowerLeft;
-    ofPoint lowerRight;
-    
-    string upperLeftMessage;
-    string upperRightMessage;
-    string lowerLeftMessage;
-    string lowerRightMessage;
-    
-    ofTrueTypeFont upperLeftFont;
-    ofTrueTypeFont upperRightFont;
-    ofTrueTypeFont lowerLeftFont;
-    ofTrueTypeFont lowerRightFont;
+    FontText upperLeft;
+    FontText upperRight;
+    FontText lowerLeft;
+    FontText lowerRight;
 };

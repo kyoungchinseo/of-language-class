@@ -8,25 +8,27 @@ void ofApp::setup(){
     float centerX = ofGetWindowWidth()/2.0;
     float centerY = ofGetWindowHeight()/2.0;
     
-    upperLeft.x = centerX - 240;
-    upperLeft.y = centerY - 40;
-    upperRight.x = centerX - 40;
-    upperRight.y = centerY - 40;
-    lowerLeft.x = centerX - 200;
-    lowerLeft.y = centerY + 175;
-    lowerRight.x = centerX - 55;
-    lowerRight.y = centerY + 260;
+    upperLeft.setup("verdana.ttf", 240);
+    upperRight.setup("verdana.ttf", 180);
+    lowerLeft.setup("verdana.ttf", 200);
+    lowerRight.setup("verdana.ttf", 300);
     
-    upperLeftMessage = "A";
-    upperRightMessage = "B";
-    lowerLeftMessage = "C";
-    lowerRightMessage = "D";
+    upperLeft.setPosition(centerX - 240, centerY - 40);
+    upperRight.setPosition(centerX - 40, centerY - 40);
+    lowerLeft.setPosition(centerX - 200, centerY + 175);
+    lowerRight.setPosition(centerX - 55, centerY + 260);
     
-    upperLeftFont.load("verdana.ttf", 240);
-    upperRightFont.load("verdana.ttf", 180);
-    lowerLeftFont.load("verdana.ttf", 200);
-    lowerRightFont.load("verdana.ttf", 300);
+    upperLeft.setMessage("A");
+    upperRight.setMessage("B");
+    lowerLeft.setMessage("C");
+    lowerRight.setMessage("D");
     
+    
+    upperLeft.setColor(ofColor(255,0,0));
+    upperRight.setColor(ofColor(255,255,0));
+    lowerLeft.setColor(ofColor(0,255,255));
+    lowerRight.setColor(ofColor(255,0,255));
+
 }
 
 //--------------------------------------------------------------
@@ -36,17 +38,12 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofSetColor(255,0,0);
-    upperLeftFont.drawString(upperLeftMessage, upperLeft.x, upperLeft.y);
     
-    ofSetColor(255,255,0);
-    upperRightFont.drawString(upperRightMessage, upperRight.x, upperRight.y);
+    upperLeft.draw();
+    upperRight.draw();
+    lowerLeft.draw();
+    lowerRight.draw();
     
-    ofSetColor(0,255,255);
-    lowerLeftFont.drawString(lowerLeftMessage, lowerLeft.x, lowerLeft.y);
-    
-    ofSetColor(255, 0, 255);
-    lowerRightFont.drawString(lowerRightMessage, lowerRight.x, lowerRight.y);
 }
 
 //--------------------------------------------------------------
