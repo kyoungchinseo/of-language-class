@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 #include "FontText.h"
+#include "CTFontText.h"
+#include "VTFontText.h"
 
 class ofApp : public ofBaseApp{
 
@@ -23,8 +25,8 @@ public:
 		void gotMessage(ofMessage msg);
 
 public:
-    FontText upperLeft;
-    FontText upperRight;
-    FontText lowerLeft;
-    FontText lowerRight;
+    FontText   normal;
+    VTFontText VTF;
+    CTFontText CTF;
+    
 };

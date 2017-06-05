@@ -8,41 +8,40 @@ void ofApp::setup(){
     float centerX = ofGetWindowWidth()/2.0;
     float centerY = ofGetWindowHeight()/2.0;
     
-    upperLeft.setup("verdana.ttf", 240);
-    upperRight.setup("verdana.ttf", 180);
-    lowerLeft.setup("verdana.ttf", 200);
-    lowerRight.setup("verdana.ttf", 300);
+    normal.setup("verdana.ttf",200);
+    normal.setPosition(centerX-100, centerY + 100);
+    normal.setMessage("O");
+    normal.setColor(ofColor(255,255,0));
     
-    upperLeft.setPosition(centerX - 240, centerY - 40);
-    upperRight.setPosition(centerX - 40, centerY - 40);
-    lowerLeft.setPosition(centerX - 200, centerY + 175);
-    lowerRight.setPosition(centerX - 55, centerY + 260);
-    
-    upperLeft.setMessage("A");
-    upperRight.setMessage("B");
-    lowerLeft.setMessage("C");
-    lowerRight.setMessage("D");
-    
-    
-    upperLeft.setColor(ofColor(255,0,0));
-    upperRight.setColor(ofColor(255,255,0));
-    lowerLeft.setColor(ofColor(0,255,255));
-    lowerRight.setColor(ofColor(255,0,255));
+    VTF.setup("verdana.ttf",200);
+    VTF.setPosition(centerX-300, centerY + 100);
+    VTF.setMessage("H");
+    VTF.setColor(ofColor(255,0,0));
+    VTF.setMaxAmplitude(200.0);
+    VTF.setStep(0.1);
+
+    CTF.setup("verdana.ttf", 200);
+    CTF.setPosition(centerX + 100, centerY + 100);
+    CTF.setMessage("T");
+    CTF.setColor(ofColor(0,255,255));
+    CTF.setStep(0.03);
+    CTF.setMinAlpha(40.0);
+    CTF.setMinAlpha(100.0);
 
 }
 
+
 //--------------------------------------------------------------
 void ofApp::update(){
-
+    VTF.update();
+    CTF.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    
-    upperLeft.draw();
-    upperRight.draw();
-    lowerLeft.draw();
-    lowerRight.draw();
+    normal.draw();
+    VTF.draw();
+    CTF.draw();
     
 }
 
